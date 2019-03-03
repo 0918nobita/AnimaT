@@ -1,0 +1,9 @@
+[*]
+end_of_line = lf
+indent_style = space
+
+[*.fs]
+indent_size = 4
+
+[*.fsproj]
+indent_style = 2
