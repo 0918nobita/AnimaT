@@ -1,0 +1,11 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "serve": "static ./ --port 1234"
+  },
+  "devDependencies": {
+    "node-static": "^0.7.11"
+  }
+}
