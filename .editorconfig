@@ -5,5 +5,5 @@ indent_style = space
 [*.fs]
 indent_size = 4
 
-[*.fsproj]
+[*.{fsproj,js,json}]
 indent_style = 2
