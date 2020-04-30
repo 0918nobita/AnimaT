@@ -37,3 +37,9 @@ match run parser2 "let _ = log 'hello'" with
     printfn "(3) Result: %s" result
 | Failure(_) ->
     ()
+
+open SAT
+
+let expr = Not(And(T, Or(F, T)))
+printfn "(4) Expr: %O" expr
+printfn "(5) EvaluatedTo: %b" <| expr.ToBool()
