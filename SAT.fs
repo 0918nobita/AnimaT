@@ -120,3 +120,8 @@ let pattern4: CNF =
     ; Or(Lit(Sym(0)), Lit(Not(2)))
     ; Or(Lit(Not(0)), Or(Lit(Not(1)), Lit(Sym(2))))
     ]
+
+// Expr -> bool
+let sat expr =
+    // TODO: implement SAT solver
+    true
