@@ -40,7 +40,7 @@ match run parser2 "let _ = log 'hello'" with
 
 open SAT
 
-let expr1 = Not(And(T, Or(F, T)))
+let expr1 = NotE(AndE(T, OrE(F, T)))
 printfn "(4) Expr: %O" expr1
 printfn "(5) EvaluatedTo: %b" <| expr1.ToBool()
 
@@ -53,8 +53,8 @@ let showExpr2 (expr : Expr) =
     List.iter printRow pairs
     printfn "-------------------"
 
-let expr2 = Or(And(Var(0), Not(Var(1))), And(Not(Var(0)), Var(1)))
+let expr2 = OrE(AndE(Var(0), NotE(Var(1))), AndE(NotE(Var(0)), Var(1)))
 showExpr2 expr2
 
-let expr3 = Not(Implies(Var(0), Var(1)))
+let expr3 = NotE(Implies(Var(0), Var(1)))
 showExpr2 expr3
