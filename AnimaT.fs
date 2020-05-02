@@ -67,3 +67,10 @@ let varDeclStmt: VariableDeclaration =
 let program: Program = { Body = [ varDeclStmt ] }
 
 JsGen.generate program
+
+open TypeSys
+
+let t1 = TFun(TFloat, TFun(TInt, TInt))
+let t2 = TFun(TFun(TFloat, TInt), TInt)
+printfn "(6) Type: %O" t1
+printfn "(7) Type: %O" t2
