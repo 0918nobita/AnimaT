@@ -58,3 +58,18 @@ showExpr2 expr2
 
 let expr3 = NotE(Implies(Var(0), Var(1)))
 showExpr2 expr3
+
+open JsAst
+
+let varDecltr: VariableDeclarator =
+    let ident: Identifier = { Name = "foo" }
+    let init: BooleanLiteral = { Value = true }
+    { Id = ident; Init = init }
+
+let varDeclStmt: VariableDeclaration =
+    { Declarations = [varDecltr]; Kind = Const }
+
+let program: Program =
+    { Body = [varDeclStmt] }
+
+JsGen.generate program
