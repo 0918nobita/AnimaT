@@ -2,6 +2,10 @@ extern crate vulkano;
 extern crate vulkano_win;
 extern crate winit;
 
+use std::thread;
+use std::sync::mpsc;
+use std::time::Duration;
+
 use vulkano::instance::{ApplicationInfo, Instance, InstanceExtensions, Version};
 
 use winit::{
@@ -15,6 +19,26 @@ const WIDTH: u32 = 800;
 const HEIGHT: u32 = 600;
 
 fn main() {
+    let (sender, receiver) = mpsc::channel();
+
+    thread::spawn(move || {
+        let vals = vec![
+            String::from("hi"),
+            String::from("from"),
+            String::from("the"),
+            String::from("thread"),
+        ];
+
+        for val in vals {
+            sender.send(val).unwrap();
+            thread::sleep(Duration::from_secs(1));
+        }
+    });
+
+    for received in receiver {
+        println!("Got: {}", received);
+    }
+
     let supported_exts = InstanceExtensions::supported_by_core().unwrap();
     println!("Supported extensions {:?}", supported_exts);
 
