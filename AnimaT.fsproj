@@ -6,11 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="JsAst.fs" />
-    <Compile Include="JsGen.fs" />
-    <Compile Include="TypeSys.fs" />
-    <Compile Include="SAT.fs"/>
-    <Compile Include="AnimaT.fs" />
+    <Compile Include="src/JsAst.fs" />
+    <Compile Include="src/JsGen.fs" />
+    <Compile Include="src/Parser.fs" />
+    <Compile Include="src/TypeSys.fs" />
+    <Compile Include="src/SAT.fs"/>
+    <Compile Include="src/AnimaT.fs" />
   </ItemGroup>
 
   <ItemGroup>
